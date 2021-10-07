@@ -68,3 +68,31 @@ elif pilih == 3 :
         Menu()
     elif pilih == 6 :
         sys.exit()
+
+def Author():    
+    os.system('cls');
+    print("Nirwana Syahputri")
+    print("Azmi Sakinah")
+    print("Putri Ramadhani")
+
+
+def tampil(): 
+    os.system('cls'); 
+    print("DATA MAHASISWA") 
+    for Data in dataSiswa: 
+        print("Nim : "+str(Data.nim)) 
+        print("Nama : "+ Data.nama) 
+        print("----------------------------") 
+         
+def pilih1(): 
+    ulang = 'Y' 
+    while ulang in("y", "Y"): 
+        os.system('cls'); 
+        siswaBaru = Mahasiswa() 
+        print("Input Data Mahasiswa ") 
+        siswaBaru.nim = (int(input("Masukkan Nim : "))) 
+        siswaBaru.nama = (inpucxt("Masukkan Nama Siswa : ")) 
+        dataSiswa.append(siswaBaru) 
+        ulang = input ("Apakah Anda Ingin Mengulang (Y/T)? ") 
+ 
+Menu();
