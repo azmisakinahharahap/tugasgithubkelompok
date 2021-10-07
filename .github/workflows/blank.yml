@@ -1,17 +1,17 @@
-﻿#APLIKASI INPUT DATA MAHASISWA  
+#! aplikasi data siswa sederhana menggunakan linked list python
  
 import os 
 import sys 
  
 class Mahasiswa: 
-        nim= "" 
-        nama= "" 
+        nim=""
+        nama="" 
 pilih = 0 
 dataSiswa = [] 
  
-def Menu () :  
-    os.system ('clear'); 
-    print("Menu Aplikasi Data Siswa") 
+ def menu():
+    os.system('clear')
+    print("Menu Aplikasi Data LinkedList python") 
     print("-----------------------------------------") 
     print("1. Input Data Siswa") 
     print("2. Tampilkan Data Siswa") 
@@ -19,17 +19,17 @@ def Menu () :
     print("4. Hapus Data Siswa") 
     print("5. Author") 
     print("6. Keluar Aplikasi") 
-    pilih = int(input("Masukkan Pilihan Anda : ")) 
-    if pilih == 1 : 
+    pilih = int(input("Masukkan pilihan anda : ")) 
+    if pilih == 1: 
         pilih1() 
-        Menu() 
+        menu() 
          
-    elif pilih == 2 : 
-        tampil() 
+    elif pilih == 2: 
+        pilih1() 
         input("Kembali Ke Menu Utama") 
-        Menu()    
+        menu()    
 
-elif pilih == 3 : 
+elif pilih == 3: 
         index_update=-1 
         tampil() 
         id_edit = int(input("Input Nim Yang Akan Di Update ")) 
@@ -38,15 +38,15 @@ elif pilih == 3 :
                 index_update = a  
                 break 
         if(index_update > -1): 
-            print("INPUT DATA SISWA YANG AKAN DI UPDATE ") 
+            print("INPUT DATA SISWA YANG DI UPDATE ") 
             siswa = Mahasiswa() 
-            siswa.nim = (int(input("Masukkan Nim : "))) 
-            siswa.nama = (input("Masukkan Nama Siswa : ")) 
+            siswa.nim = (int(input("msukkan nim : "))) 
+            siswa.nama = (input("masukkan nama siswa : ")) 
             dataSiswa[index_update] = siswa 
             print("Berhasil Update Data Siswa") 
         else : print("Nim Tidak Ditemukan") 
         input("Kembali Ke Menu Utama") 
-        Menu()  
+        menu()  
     elif pilih == 4 :
         os.system('clear');
         index_delete=-1
@@ -60,24 +60,24 @@ elif pilih == 3 :
             del dataSiswa[index_delete]
             print("Data Telah Di Hapus")
         else : print ("Data Telah Di Hapus")
-        input("Kembali Menu Utama")
-        Menu()
+        input("Kembali ke Menu Utama")
+        menu()
     elif pilih == 5 : 
         Author() 
         input("\n\n Kembali Ke Menu Utama")
-        Menu()
+        menu()
     elif pilih == 6 :
         sys.exit()
 
 def Author():    
-    os.system('cls');
+    os.system('clear');
     print("Nirwana Syahputri")
     print("Azmi Sakinah")
     print("Putri Ramadhani")
 
 
 def tampil(): 
-    os.system('cls'); 
+    os.system('clear'); 
     print("DATA MAHASISWA") 
     for Data in dataSiswa: 
         print("Nim : "+str(Data.nim)) 
@@ -87,7 +87,7 @@ def tampil():
 def pilih1(): 
     ulang = 'Y' 
     while ulang in("y", "Y"): 
-        os.system('cls'); 
+        os.system('clear'); 
         siswaBaru = Mahasiswa() 
         print("Input Data Mahasiswa ") 
         siswaBaru.nim = (int(input("Masukkan Nim : "))) 
@@ -95,4 +95,4 @@ def pilih1():
         dataSiswa.append(siswaBaru) 
         ulang = input ("Apakah Anda Ingin Mengulang (Y/T)? ") 
  
-Menu();
+menu()
